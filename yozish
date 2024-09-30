@@ -1,0 +1,3 @@
+java.rmi.RemoteException
+	at exam.LogExam.main(LogExam.java:19)
+ ishladi
