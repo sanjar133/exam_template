@@ -1,4 +1,4 @@
-package exam;
+package question3;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,10 +10,10 @@ public class QuestionThird {
 
     public static void main(String[] args) throws IOException {
 
-        Pattern pattern=Pattern.compile("[0-9]{2,}");
-        BufferedReader bufferedReader=new BufferedReader(new FileReader("examtext.txt"));
-        StringBuilder stringBuilder=new StringBuilder();
-        while (bufferedReader.ready()){
+        Pattern pattern = Pattern.compile("(?=.*[a-z])");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("Password.txt"));
+        StringBuilder stringBuilder = new StringBuilder();
+        while (bufferedReader.ready()) {
             stringBuilder.append(bufferedReader.readLine());
             stringBuilder.append(" ");
         }
@@ -21,8 +21,7 @@ public class QuestionThird {
         String[] s = string.split(" ");
         for (int i = 0; i < s.length; i++) {
             Matcher matcher = pattern.matcher(s[i]);
-            while (matcher.find())
-            {
+            while (matcher.find()) {
                 System.out.println(matcher.group());
             }
         }
